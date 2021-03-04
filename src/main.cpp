@@ -33,6 +33,8 @@ void setup()
     Serial.println("début...");
 }
 
+uint16_t rotations = 2000;
+
 void loop() 
 {
     static unsigned long ptempoPas = 0;       // délai entre deux pas
@@ -56,7 +58,7 @@ void loop()
             }
     }
 
-    if((millis() - ptempoPas) > tempoPas)
+    if(rotations && (millis() - ptempoPas) > tempoPas)
     {
         static uint8_t position = 0;
 
@@ -99,6 +101,8 @@ void loop()
             } break;
         }
         (position == 3) ? position = 0 : position++;
-        Serial.print(position); Serial.print(" ");
+
+        rotations -= 1;
+        Serial.print(rotations); Serial.print(" ");
     }
 }
