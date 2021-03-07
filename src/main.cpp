@@ -1,4 +1,15 @@
 #include <Arduino.h>
+#include <SPI.h>
+#include <Wire.h>
+
+//#include <Adafruit_GFX.h>
+//#include <Adafruit_ST7735.h>
+
+#include <gestionBP.h>
+
+#define cs 10
+#define dc 9
+#define rst 8
 
 const int pasParTour = 200;        // change this to fit the number of steps per revolution
 
